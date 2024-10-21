@@ -2,12 +2,12 @@
 {
     public class VendingMachine
     {
-        public string name;
-        public double cashBalance;
-        public double amountOfWater;
-        public double amountOfCoffee;
-        public double amountOfMilk;
-        public double amountOfSugar;
-        public double salesAmounts;
+        public string name { get; private set; }
+        public double cashBalance { get; private set; }
+        public double amountOfWater { get; private set; }
+        public double amountOfCoffee { get; private set; }
+        public double amountOfMilk { get; private set; }
+        public double amountOfSugar { get; private set; }
+        public double salesAmounts { get; private set; }
     }
 }
