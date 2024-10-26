@@ -10,25 +10,49 @@
         public double AmountOfSugar { get; private set; }
         public double SalesAmounts { get; private set; }
 
-        private double _americano;
+        private int _priceOfAmericano;
 
-        private double _cappuccino;
+        private int _priceOfCappuccino;
 
-        private double _latte;
+        private int _priceOfLatte;
 
-        public VendingMachine(string name, double cashBalance, double amountOfWater, double amountOfCoffee, double amountOfMilk, double amountOfSugar, double salesAmounts)
+        public VendingMachine(string name)
         {
             this.Name = name;
-            this.CashBalance = cashBalance;
-            this.AmountOfWater = amountOfWater;
-            this.AmountOfCoffee = amountOfCoffee;
-            this.AmountOfMilk = amountOfMilk;
-            this.AmountOfSugar = amountOfSugar;
-            this.SalesAmounts = salesAmounts;
-            this._americano = 50;
-            this._cappuccino = 100;
-            this._latte = 200;
+            this.CashBalance = 0;
+            this.SalesAmounts = 0;
+            this._priceOfAmericano = 50;
+            this._priceOfCappuccino = 100;
+            this._priceOfLatte = 200;
+            Fix();
 
+        }
+
+        public void AddCash(double amountOfMoney)
+        {
+            CashBalance += amountOfMoney;
+            Console.WriteLine($"В авмтомат {Name} положили {amountOfMoney}. баланс = {CashBalance}");
+        }
+
+        public double ReturneCash()
+        {
+            double result = CashBalance;
+            CashBalance = 0;
+            Console.WriteLine($"Сдача = {result}");
+            return result;
+        } 
+
+        //public double drinkSelection(int choise, int depositMoney, int _priceOfAmericano, int _priceOfCappucino, int _priceOfLatte)
+        //{
+            
+        //}
+
+        public void Fix()
+        {
+            this.AmountOfWater = 2;
+            this.AmountOfCoffee = 250;
+            this.AmountOfMilk = 1;
+            this.AmountOfSugar = 150;
         }
 
     }

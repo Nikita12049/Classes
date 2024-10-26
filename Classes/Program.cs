@@ -1,12 +1,15 @@
-﻿using System.Xml.Linq;
-
-namespace Classes
+﻿namespace Classes
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            VendingMachine coffeeMacine = new VendingMachine("Кофемашина", 0, 2 , 250, 1, 150, 0);
+
+            VendingMachine coffeeMacine = new VendingMachine("Кофемашина");
+            coffeeMacine.AddCash(100);
+            coffeeMacine.AddCash(150);
+            coffeeMacine.ReturneCash();
+
         }
     }
 }
