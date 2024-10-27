@@ -25,7 +25,6 @@
             this._priceOfCappuccino = 100;
             this._priceOfLatte = 200;
             Fix();
-
         }
 
         public void AddCash(double amountOfMoney)
@@ -34,18 +33,37 @@
             Console.WriteLine($"В авмтомат {Name} положили {amountOfMoney}. баланс = {CashBalance}");
         }
 
-        public double ReturneCash()
+        public double ReturnCash()
         {
             double result = CashBalance;
             CashBalance = 0;
             Console.WriteLine($"Сдача = {result}");
             return result;
-        } 
+        }
 
-        //public double drinkSelection(int choise, int depositMoney, int _priceOfAmericano, int _priceOfCappucino, int _priceOfLatte)
-        //{
-            
-        //}
+        public double DrinkSelection(string choice)
+        {
+            if (choice == "американо")
+            {
+                SalesAmounts += _priceOfAmericano;
+                Console.WriteLine($"К сумме продаж прибавилось {_priceOfAmericano}");
+            }
+            else if (choice == "капучино")
+            {
+                SalesAmounts += _priceOfCappuccino;
+                Console.WriteLine($"К сумме продаж прибавилось {_priceOfCappuccino}");
+            }
+            else if (choice == "латте")
+            {
+                SalesAmounts += _priceOfLatte;
+                Console.WriteLine($"К сумме продаж прибавилось {_priceOfLatte}");
+            }
+            else
+            {
+                Console.WriteLine("Такого напитка нет");
+            }
+            return SalesAmounts;
+        }
 
         public void Fix()
         {

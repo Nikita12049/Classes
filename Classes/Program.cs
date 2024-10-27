@@ -8,8 +8,11 @@
             VendingMachine coffeeMacine = new VendingMachine("Кофемашина");
             coffeeMacine.AddCash(100);
             coffeeMacine.AddCash(150);
-            coffeeMacine.ReturneCash();
-
+            coffeeMacine.ReturnCash();
+            coffeeMacine.DrinkSelection("американо");
+            coffeeMacine.DrinkSelection("капучино");
+            coffeeMacine.DrinkSelection("латте");
+            coffeeMacine.DrinkSelection("лрсиромрчсормравмавмора");
         }
     }
 }
