@@ -46,13 +46,17 @@
             return result;
         }
 
-        public double DrinkSelection(string choice)
+        public double DrinkSelection(string choice, string addSugar)
         {
             if (choice == "американо")
             {
                 SalesAmounts += _priceOfAmericano;
                 AmountOfWater -= 0.15;
                 AmountOfCoffee -= 10;
+                if (addSugar == "да")
+                {
+                    AmountOfSugar -= 5;
+                }
                 Console.WriteLine($"К сумме продаж прибавилось {_priceOfAmericano}");
             }
             else if (choice == "капучино")
@@ -61,6 +65,10 @@
                 AmountOfWater -= 0.03;
                 AmountOfCoffee -= 10;
                 AmountOfMilk -= 0.1;
+                if (addSugar == "да")
+                {
+                    AmountOfSugar -= 5;
+                }
                 Console.WriteLine($"К сумме продаж прибавилось {_priceOfCappuccino}");
             }
             else if (choice == "латте")
@@ -69,6 +77,10 @@
                 AmountOfWater -= 0.03;
                 AmountOfCoffee -= 10;
                 AmountOfMilk += 0.2;
+                if (addSugar == "да")
+                {
+                    AmountOfSugar -= 5;
+                }
                 Console.WriteLine($"К сумме продаж прибавилось {_priceOfLatte}");
             }
             else

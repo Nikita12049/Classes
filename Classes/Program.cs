@@ -9,10 +9,10 @@
             coffeeMacine.AddCash(100);
             coffeeMacine.AddCash(150);
             coffeeMacine.ReturnCash();
-            coffeeMacine.DrinkSelection("американо");
-            coffeeMacine.DrinkSelection("капучино");
-            coffeeMacine.DrinkSelection("латте");
-            coffeeMacine.DrinkSelection("лрсиромрчсормравмавмора");
+            coffeeMacine.DrinkSelection("американо", "да");
+            coffeeMacine.DrinkSelection("капучино", "да");
+            coffeeMacine.DrinkSelection("латте", "да");
+            coffeeMacine.DrinkSelection("лрсиромрчсормравмавмора", "да");
             coffeeMacine.PrintInfo();
         }
     }
