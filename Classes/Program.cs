@@ -13,6 +13,7 @@
             coffeeMacine.DrinkSelection("капучино");
             coffeeMacine.DrinkSelection("латте");
             coffeeMacine.DrinkSelection("лрсиромрчсормравмавмора");
+            coffeeMacine.PrintInfo();
         }
     }
 }

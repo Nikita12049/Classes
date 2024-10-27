@@ -27,6 +27,11 @@
             Fix();
         }
 
+        public void PrintInfo()
+        {
+            Console.WriteLine($"Количество воды: {AmountOfWater}. Количество кофе: {AmountOfCoffee}. Количество молока: {AmountOfMilk}. Количество сахара {AmountOfSugar}.");
+        }
+
         public void AddCash(double amountOfMoney)
         {
             CashBalance += amountOfMoney;
@@ -46,24 +51,34 @@
             if (choice == "американо")
             {
                 SalesAmounts += _priceOfAmericano;
+                AmountOfWater -= 0.15;
+                AmountOfCoffee -= 10;
                 Console.WriteLine($"К сумме продаж прибавилось {_priceOfAmericano}");
             }
             else if (choice == "капучино")
             {
                 SalesAmounts += _priceOfCappuccino;
+                AmountOfWater -= 0.03;
+                AmountOfCoffee -= 10;
+                AmountOfMilk -= 0.1;
                 Console.WriteLine($"К сумме продаж прибавилось {_priceOfCappuccino}");
             }
             else if (choice == "латте")
             {
                 SalesAmounts += _priceOfLatte;
+                AmountOfWater -= 0.03;
+                AmountOfCoffee -= 10;
+                AmountOfMilk += 0.2;
                 Console.WriteLine($"К сумме продаж прибавилось {_priceOfLatte}");
             }
             else
             {
                 Console.WriteLine("Такого напитка нет");
             }
+            Console.WriteLine($"Сумма продаж = {SalesAmounts}");
             return SalesAmounts;
         }
+
 
         public void Fix()
         {
