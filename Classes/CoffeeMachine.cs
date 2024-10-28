@@ -1,6 +1,6 @@
 ﻿namespace Classes
 {
-    public class VendingMachine : BaseVendingMachine
+    public class CoffeeMachine : BaseVendingMachine
     {
         public double AmountOfWater { get; private set; }
         public double AmountOfCoffee { get; private set; }
@@ -13,7 +13,7 @@
 
         private int _priceOfLatte;
 
-        public VendingMachine(string name)
+        public CoffeeMachine(string name)
         {
             this._priceOfAmericano = 50;
             this._priceOfCappuccino = 100;

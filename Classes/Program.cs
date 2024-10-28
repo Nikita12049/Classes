@@ -6,10 +6,11 @@ namespace Classes
     {
         static void Main(string[] args)
         {
-            VendingMachine coffeeMacine = new VendingMachine("Кофемашина");
-            VendingMachine sodaMachine = new VendingMachine("Автомат с газировкой");
+            CoffeeMachine coffeeMacine = new CoffeeMachine("Кофемашина");
 
-            sodaMachine.DrinkSelection("американо", "да");
+            SodaMacine sodaMacine = new SodaMacine("Автомат с газировкой");
+
+            sodaMacine.DrinkSelection("кока кола");
 
             coffeeMacine.DrinkSelection("американо", "да");
             coffeeMacine.DrinkSelection("капучино", "да");
