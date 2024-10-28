@@ -9,6 +9,8 @@ namespace Classes
             VendingMachine coffeeMacine = new VendingMachine("Кофемашина");
             VendingMachine sodaMachine = new VendingMachine("Автомат с газировкой");
 
+            sodaMachine.DrinkSelection("американо", "да");
+
             coffeeMacine.DrinkSelection("американо", "да");
             coffeeMacine.DrinkSelection("капучино", "да");
             coffeeMacine.AddCash(50);
