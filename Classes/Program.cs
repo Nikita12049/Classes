@@ -1,19 +1,20 @@
-﻿namespace Classes
+﻿using System.Reflection.PortableExecutable;
+
+namespace Classes
 {
     public class Program
     {
         static void Main(string[] args)
         {
-
             VendingMachine coffeeMacine = new VendingMachine("Кофемашина");
-            coffeeMacine.AddCash(100);
-            coffeeMacine.AddCash(150);
-            coffeeMacine.ReturnCash();
+            VendingMachine sodaMachine = new VendingMachine("Автомат с газировкой");
+
             coffeeMacine.DrinkSelection("американо", "да");
             coffeeMacine.DrinkSelection("капучино", "да");
-            coffeeMacine.DrinkSelection("латте", "да");
-            coffeeMacine.DrinkSelection("лрсиромрчсормравмавмора", "да");
+            coffeeMacine.AddCash(50);
+            coffeeMacine.ReturnCash();
             coffeeMacine.PrintInfo();
+            coffeeMacine.ErrorNotification();
         }
     }
 }
