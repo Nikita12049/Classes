@@ -13,7 +13,7 @@
 
         private int _priceOfLatte;
 
-        public CoffeeMachine(string name)
+        public CoffeeMachine(string name) : base(name)
         {
             this._priceOfAmericano = 50;
             this._priceOfCappuccino = 100;
@@ -30,6 +30,7 @@
         {
             if (choice == "американо")
             {
+                CashBalance -= _priceOfAmericano;
                 SalesAmounts += _priceOfAmericano;
                 AmountOfWater -= 0.15;
                 AmountOfCoffee -= 10;
@@ -42,6 +43,7 @@
             }
             else if (choice == "капучино")
             {
+                CashBalance -= _priceOfCappuccino;
                 SalesAmounts += _priceOfCappuccino;
                 AmountOfWater -= 0.03;
                 AmountOfCoffee -= 10;
@@ -55,6 +57,8 @@
             }
             else if (choice == "латте")
             {
+
+                CashBalance -= _priceOfLatte;
                 SalesAmounts += _priceOfLatte;
                 AmountOfWater -= 0.03;
                 AmountOfCoffee -= 10;

@@ -9,7 +9,7 @@
 
         private int _priceOfFanta;
 
-        public SodaMacine(string name)
+        public SodaMacine(string name) : base(name)
         {
             this._priceOfСocaСola = 200;
             this._priceOfSprite = 100;
@@ -21,16 +21,21 @@
             if (choice == "кока кола")
             {
                 SalesAmounts += _priceOfСocaСola;
+
+                Console.WriteLine($"К сумме продаж прибавилось {_priceOfСocaСola}");
             }
 
             else if (choice == "спрайт")
             {
                 SalesAmounts += _priceOfSprite;
+                Console.WriteLine($"К сумме продаж прибавилось {_priceOfSprite}");
             }
+            
 
             else if (choice == "фанта")
             {
                 SalesAmounts += _priceOfFanta;
+                Console.WriteLine($"К сумме продаж прибавилось {_priceOfFanta}");
             }
 
             else
