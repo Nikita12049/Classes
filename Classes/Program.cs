@@ -14,10 +14,15 @@ namespace Classes
 
             coffeeMacine.DrinkSelection("американо", "да");
             coffeeMacine.DrinkSelection("капучино", "да");
+            coffeeMacine.PrintInfo();
+            coffeeMacine.DrinkSelection("капучино", "да");
+            coffeeMacine.PrintInfo();
+
             coffeeMacine.AddCash(50);
             coffeeMacine.ReturnCash();
             coffeeMacine.PrintInfo();
             coffeeMacine.ErrorNotification();
+            coffeeMacine.Fix();
         }
     }
 }

@@ -24,6 +24,8 @@
         public void PrintInfo()
         {
             Console.WriteLine($"Количество воды: {AmountOfWater}. Количество кофе: {AmountOfCoffee}. Количество молока: {AmountOfMilk}. Количество сахара {AmountOfSugar}.");
+            ErrorNotification();
+            Fix();
         }
 
         public double DrinkSelection(string choice, string addSugar)
@@ -85,26 +87,49 @@
             {
                 Console.WriteLine("В кофемашине закончилась вода приходите позже");
             }
+
             if (AmountOfCoffee <= 0)
             {
                 Console.WriteLine("В кофемашине закончился кофе приходите позже");
             }
+
             if (AmountOfMilk <= 0)
             {
                 Console.WriteLine("В кофемашине закончилось молоко приходите позже");
             }
+
             if (AmountOfSugar <= 0)
             {
                 Console.WriteLine("В кофемашине закончился сахар приходите позже");
+            }
+
+            else
+            {
+                Console.WriteLine("Ошибок не обнаружено");
             }
         }
 
         public void Fix()
         {
-            this.AmountOfWater = 2;
-            this.AmountOfCoffee = 250;
-            this.AmountOfMilk = 1;
-            this.AmountOfSugar = 150;
+            if (AmountOfWater <= 0)
+            {
+                this.AmountOfWater = 2;
+            }
+
+            if (AmountOfCoffee <= 0)
+            {
+                this.AmountOfCoffee = 250;
+            }
+
+            if (AmountOfMilk <= 0)
+            {
+                this.AmountOfMilk = 1;
+            }
+
+            if (AmountOfSugar <= 0)
+            {
+                this.AmountOfSugar = 150;
+            }
         }
 
     }
