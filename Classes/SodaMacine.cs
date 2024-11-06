@@ -46,5 +46,17 @@
 
             return SalesAmounts;
         }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is SodaMacine macine &&
+                   base.Equals(obj) &&
+                   Name == macine.Name &&
+                   CashBalance == macine.CashBalance &&
+                   SalesAmounts == macine.SalesAmounts &&
+                   _priceOfСocaСola == macine._priceOfСocaСola &&
+                   _priceOfSprite == macine._priceOfSprite &&
+                   _priceOfFanta == macine._priceOfFanta;
+        }
     }
 }

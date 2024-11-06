@@ -1,8 +1,6 @@
-﻿using System.Xml.Linq;
-
-namespace Classes
+﻿namespace Classes
 {
-    public class BaseVendingMachine
+    abstract class BaseVendingMachine
     {
         public string Name { get; private set; }
         public double CashBalance { get; set; }
@@ -23,10 +21,28 @@ namespace Classes
 
         public double ReturnCash()
         {
-            double result = CashBalance;
-            CashBalance = 0;
-            Console.WriteLine($"Сдача = {result}");
-            return result;
+            double HandingOverMoney = 0;
+
+            if (CashBalance <= 0)
+            {
+                Console.WriteLine("Недостаточно средств");
+            }
+
+            if (CashBalance > 0)
+            {
+
+            }
+
+            Console.WriteLine($"Сдача = {HandingOverMoney}");
+            return HandingOverMoney;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is BaseVendingMachine machine &&
+                   Name == machine.Name &&
+                   CashBalance == machine.CashBalance &&
+                   SalesAmounts == machine.SalesAmounts;
         }
     }
 }

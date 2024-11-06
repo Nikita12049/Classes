@@ -24,11 +24,9 @@
         public void PrintInfo()
         {
             Console.WriteLine($"Количество воды: {AmountOfWater}. Количество кофе: {AmountOfCoffee}. Количество молока: {AmountOfMilk}. Количество сахара {AmountOfSugar}.");
-            ErrorNotification();
-            Fix();
         }
 
-        public double DrinkSelection(string choice, string addSugar)
+        public override double DrinkSelection(string choice, string addSugar)
         {
             if (choice == "американо")
             {
@@ -57,6 +55,7 @@
                 }
                 Console.WriteLine($"К сумме продаж прибавилось {_priceOfCappuccino}");
             }
+
             else if (choice == "латте")
             {
 
@@ -72,11 +71,15 @@
                 }
                 Console.WriteLine($"К сумме продаж прибавилось {_priceOfLatte}");
             }
+
             else
             {
                 Console.WriteLine("Такого напитка нет");
             }
             Console.WriteLine($"Сумма продаж = {SalesAmounts}");
+
+            ErrorNotification();
+            Fix();
 
             return SalesAmounts;
         }
@@ -132,5 +135,19 @@
             }
         }
 
+        public override bool Equals(object? obj)
+        {
+            return obj is CoffeeMachine machine &&
+                   Name == machine.Name &&
+                   CashBalance == machine.CashBalance &&
+                   SalesAmounts == machine.SalesAmounts &&
+                   AmountOfWater == machine.AmountOfWater &&
+                   AmountOfCoffee == machine.AmountOfCoffee &&
+                   AmountOfMilk == machine.AmountOfMilk &&
+                   AmountOfSugar == machine.AmountOfSugar &&
+                   _priceOfAmericano == machine._priceOfAmericano &&
+                   _priceOfCappuccino == machine._priceOfCappuccino &&
+                   _priceOfLatte == machine._priceOfLatte;
+        }
     }
 }
